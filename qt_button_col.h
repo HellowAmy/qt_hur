@@ -11,8 +11,6 @@
 #include <QLabel>
 #include <QMouseEvent>
 
-#include "c_define.h"
-
 class qt_button_col : public QPushButton
 {
     Q_OBJECT
@@ -38,7 +36,6 @@ signals:
     emit void fa_leave();
     emit void fa_release();
 
-
 protected:
     void paintEvent(QPaintEvent *event) override;
 
@@ -50,6 +47,7 @@ protected:
 
 private:
     QVector<QVector<bool>> vec_col;//数据容器
+    QVector<QVector<QColor>> vec_rgb;//数据容器
     QString pic_col;//图片路径
     QPixmap pix;//图片
 

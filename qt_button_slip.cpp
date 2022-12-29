@@ -65,6 +65,10 @@ void qt_button_slip::mousePressEvent(QMouseEvent *event)
 
 void qt_button_slip::init_wid()
 {
+    this->resize(40,18);
+    this->set_space(3);
+    this->move_max();
+
     v_speed_move=18;//速度控制
     v_space=30;//间隔
 

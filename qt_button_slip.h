@@ -6,9 +6,6 @@
 #include <QPainter>
 #include <QTimer>
 
-#include <QDebug>
-#define out qDebug()
-
 class qt_button_slip : public QPushButton
 {
     Q_OBJECT

@@ -28,9 +28,11 @@ void qt_button_col::set_pic(QString pic)
         for (int w = 0; w < img.width(); ++w)
         {
             vec_col.push_back(QVector<bool>());
+            vec_rgb.push_back(QVector<QColor>());
             for (int h = 0; h < img.height(); ++h)
             {
                 vec_col[w].push_back(false);
+                vec_rgb[w].push_back(img.pixelColor(w, h));
                 if(img.pixel(w, h) != 0) vec_col[w][h] = true;
             }
         }
@@ -79,7 +81,12 @@ void qt_button_col::change_col_pic(QColor col)
             {
                 for (int h = 0; h < img.height(); h++)
                 {
-                    if(vec_col[w][h] == true) img.setPixel(w,h,col.rgba());
+                    if(vec_col[w][h] == true)
+                    {
+                        QColor temp(col);
+                        temp.setAlpha(vec_rgb[w][h].alpha());
+                        img.setPixelColor(w,h,temp);
+                    }
                 }
             }
             pix=QPixmap::fromImage(img);//保存

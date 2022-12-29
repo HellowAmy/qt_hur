@@ -53,7 +53,6 @@ void wid_home::init_signal()
     signal_m2();
     signal_m3();
     signal_m4();
-
 }
 
 void wid_home::init_m2()

@@ -3,6 +3,9 @@
 
 #include <QWidget>
 
+#include <QDebug>
+#define out qDebug()
+
 #include "qt_frameless.h"
 #include "wid_main.h"
 #include "wid_menu_dig.h"
